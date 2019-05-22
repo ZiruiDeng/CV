@@ -29,8 +29,7 @@ class Predict:
         ckpt = tf.train.get_checkpoint_state(CKPT_DIR)
         if ckpt and ckpt.model_checkpoint_path:
             saver.restore(self.sess, ckpt.model_checkpoint_path)
-        #else:
-            #raise FileNotFoundError("未保存任何模型")
+
 
     def predict(self, img):
         # 读图片并转为黑白的
@@ -52,4 +51,3 @@ if __name__ == "__main__":
     app = Predict()
     #app.predict('../test_images/0.png')
     app.predict('1.png')
-    app.predict('4.png')
