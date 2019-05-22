@@ -1,3 +1,7 @@
+import sys
+sys.path.append('C:\Users\Administrator\Desktop\big-data-project-master\model.py')
+import model
+
 from model import Network
 from predict import Predict
 from flask import Flask, flash, request, redirect, url_for
@@ -69,5 +73,5 @@ def predict():
 if __name__ == '__main__':
     cluster = Cluster(['ll-cassandra'])
     session = cluster.connect(KEYSPACE)
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=9042)
     #app.run(debug=True)
