@@ -1,7 +1,3 @@
-import sys
-sys.path.append('C:\Users\Administrator\Desktop\big-data-project-master\model.py')
-import model
-
 from model import Network
 from predict import Predict
 from flask import Flask, flash, request, redirect, url_for
