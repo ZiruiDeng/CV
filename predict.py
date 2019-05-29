@@ -4,13 +4,6 @@ from PIL import Image
 
 from model import Network
 
-'''
-python 3.6
-tensorflow 1.4
-pillow(PIL) 4.3.0
-使用tensorflow的模型来预测手写数字
-输入是28 * 28像素的图片，输出是个具体的数字
-'''
 
 CKPT_DIR = 'model/'
 
@@ -21,7 +14,6 @@ class Predict:
         self.sess = tf.Session()
         self.sess.run(tf.global_variables_initializer())
 
-        # 加载模型到sess中
         self.restore()
 
     def restore(self):
@@ -32,8 +24,6 @@ class Predict:
 
 
     def predict(self, img):
-        # 读图片并转为黑白的
-        #img = Image.open(image_path).convert('L')
         img=img.convert('L')
         flatten_img = np.reshape(img, 784)
         x = np.array([1 - flatten_img])
