@@ -17,6 +17,7 @@ dockerfile
 requirements.txt
 
 
+
 some pictures of numbers used to test the app 
 
 snapshots of the app running
