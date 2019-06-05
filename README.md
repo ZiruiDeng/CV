@@ -1,9 +1,9 @@
 
-Introduction
+*Introduction
 
-This project deploys MNIST application into the container. Users submit digital pictures with handwritten charactersThis program first recognizes the pictures, and then returns the recognized numbers to users. Every time a user submits an image, identifies a text and timestamp information in MNIST, it is recorded in Cassandra for storage.
+This project deploys MNIST application into the container. Users submit digital pictures with handwritten characters. This program first recognizes the pictures, and then returns the recognized numbers to users. Every time a user submits an image, identifies a text and timestamp information in MNIST, it is recorded in Cassandra for storage.
 
-Files
+*Files
 
 app.py: main program
 
