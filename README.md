@@ -13,7 +13,7 @@ dockerfile
 
 requirements.txt
 
-images: some pictures of numbers used to test the app
+images: some pictures of numbers used to test the app and snapshots of the app running
 
 model: perserved mnist model after training
 
