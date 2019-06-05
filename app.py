@@ -67,7 +67,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    cluster = Cluster(['ll-cassandra'])
+    cluster = Cluster(contact_points=['127.0.0.1'],port=9042)
     session = cluster.connect(KEYSPACE)
-    app.run(host='0.0.0.0', port=9042)
-    #app.run(debug=True)
