@@ -4,8 +4,16 @@ from PIL import Image
 
 from model import Network
 
+'''
+python 3.7
+tensorflow 1.4
+pillow(PIL) 4.3.0
+使用tensorflow的模型来预测手写数字
+输入是28 * 28像素的图片，输出是个具体的数字
+'''
 
 CKPT_DIR = 'model/'
+
 
 
 class Predict:
@@ -14,6 +22,7 @@ class Predict:
         self.sess = tf.Session()
         self.sess.run(tf.global_variables_initializer())
 
+        # 加载模型到sess中
         self.restore()
 
     def restore(self):
@@ -21,9 +30,12 @@ class Predict:
         ckpt = tf.train.get_checkpoint_state(CKPT_DIR)
         if ckpt and ckpt.model_checkpoint_path:
             saver.restore(self.sess, ckpt.model_checkpoint_path)
-
+        #else:
+            #raise FileNotFoundError("未保存任何模型")
 
     def predict(self, img):
+        # 读图片并转为黑白的
+        #img = Image.open(image_path).convert('L')
         img=img.convert('L')
         flatten_img = np.reshape(img, 784)
         x = np.array([1 - flatten_img])
@@ -36,8 +48,14 @@ class Predict:
         x=str(np.argmax(y[0]))
         return x
 
+        saver = tf.train.Saver()
+        sess = tf.InteractiveSession()
+        tf.global_variables_initializer().run() 
+        for _ in range(1000):
+          batch_xs, batch_ys = mnist.train.next_batch(100)
+          sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys}
+             saver.save(sess, "model/model.ckpt")
 
 if __name__ == "__main__":
     app = Predict()
-    #app.predict('../test_images/0.png')
-    app.predict('1.png')
+    app.predict('4.png')
