@@ -67,5 +67,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    cluster = Cluster(contact_points=['127.0.0.1'],port=9042)
+    cluster = Cluster(contact_points=['127.0.0.1'],port=80)
     session = cluster.connect(KEYSPACE)
