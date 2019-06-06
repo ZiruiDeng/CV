@@ -46,4 +46,4 @@ curl -X POST -F image=@[path_to_the_image] '[url_to_the_service]'
 
 
 ## Use Web to Submit Images
-The app is running on localhost:4000. Refer to the project report file for more details.
+The app can be run on localhost:4000. Refer to the project report file for more details.
