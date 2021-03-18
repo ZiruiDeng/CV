@@ -1,6 +1,0 @@
-Flask
-tensorflow
-numpy
-pillow
-datetime
-cassandra-driver
